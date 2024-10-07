@@ -1,0 +1,192 @@
+<html><head><base href="https://tecnonauta.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TecnoNauta - Inicio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    background-color: #000;
+    color: #00FFFF;
+  }
+  .background {
+    background-image: url('https://i.ibb.co/JQxFVZC/wp14428876.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00FFFF;
+    text-decoration: none;
+    cursor: default;
+  }
+  nav a {
+    color: #00FFFF;
+    text-decoration: none;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+  }
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #00FFFF;
+  }
+  .service-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+  }
+  .service {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00FFFF;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .service:hover {
+    box-shadow: 0 0 15px #00FFFF;
+  }
+  .service h2 {
+    color: #00FFFF;
+    margin-bottom: 1rem;
+  }
+  .service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  .service-content.active {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+  }
+  .cta-button {
+    background-color: #00FFFF;
+    color: #000;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta-button:hover {
+    background-color: #00CCCC;
+    transform: scale(1.05);
+  }
+  .whatsapp-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #00FFFF;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+</style>
+<script>
+  function showAlert() {
+    alert('Catálogos no disponibles');
+  }
+  
+  function toggleService(id) {
+    var content = document.getElementById(id);
+    content.classList.toggle('active');
+  }
+</script>
+</head>
+<body>
+  <div class="background">
+    <header>
+      <span class="logo">TecnoNauta</span>
+      <nav>
+        <a href="#" onclick="showAlert()">Catálogos</a>
+      </nav>
+    </header>
+    <div class="content">
+      <h1>Bienvenido a TecnoNauta</h1>
+      <div class="service-container">
+        <div class="service" onclick="toggleService('informaticos')">
+          <h2>Servicios Informáticos</h2>
+          <div id="informaticos" class="service-content">
+            <p>¡Bienvenidos a TecnoNauta!</p>
+            <p>¿Necesitas ayuda con tu dispositivo Android? ¡Estamos aquí para ayudarte! Ofrecemos los siguientes servicios:</p>
+            <ul>
+              <li>Eliminación de cuentas de Google (FRP)</li>
+              <li>Eliminación de bloqueos de pantalla en PC</li>
+              <li>Instalación de sistemas operativos</li>
+              <li>Instalación de antivirus y paquetes Office</li>
+            </ul>
+            <p>Y para iPhone:</p>
+            <ul>
+              <li>Creación de cuentas de iCloud</li>
+              <li>Configuración de VPN</li>
+            </ul>
+            <p>No realizamos trabajos de hardware, pero garantizamos servicios rápidos y eficientes para tus necesidades tecnológicas.</p>
+            <p>💳 Aceptamos pagos por transferencia y en efectivo.</p>
+            <p>¡Confía en TecnoNauta para resolver tus problemas tecnológicos con calidad y rapidez!</p>
+          </div>
+        </div>
+        <div class="service" onclick="toggleService('audiovisuales')">
+          <h2>Servicios de Grabaciones Audiovisuales</h2>
+          <div id="audiovisuales" class="service-content">
+            <p>En TecnoNauta, ofrecemos servicios de grabación de contenidos audiovisuales de alta calidad:</p>
+            <ul>
+              <li>Series</li>
+              <li>Novelas</li>
+              <li>Películas</li>
+              <li>Documentales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/+5356639178?text=Hola%20Necesito%20alguno%20de%20sus%20servicios" class="cta-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo" class="whatsapp-logo">
+        Contacto
+      </a>
+    </div>
+    <footer>
+      <p>&copy; 2024 TecnoNauta. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body></html>
